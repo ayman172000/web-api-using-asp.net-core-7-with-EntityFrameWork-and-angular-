@@ -1,0 +1,42 @@
+<h1 mat-dialog-title>{{actionBtn}} Departement</h1>
+<div mat-dialog-content>
+  <form [formGroup]="salariesForm">
+
+    <mat-form-field appearance="outline">
+      <mat-label>Last name</mat-label>
+      <input formControlName="lname"  matInput placeholder="Last name">
+      <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>First Name</mat-label>
+      <input formControlName="fname"  matInput placeholder="First Name">
+      <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Age</mat-label>
+      <input formControlName="age"  matInput placeholder="Age" type="number">
+      <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Salaire</mat-label>
+      <input formControlName="salaire"  matInput placeholder="Salaire" type="number">
+      <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" *ngIf="actionBtn=='Save'">
+      <mat-label>Departement</mat-label>
+      <mat-select formControlName="dep" placeholder="Choose Departement">
+        <mat-option *ngFor="let data of dep" value="{{data.departementId}}">{{data.nameDep}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+  </form>
+</div>
+<div mat-dialog-actions [align]="'end'">
+  <button mat-raised-button color="warn" mat-dialog-close>Close</button>
+  <button *ngIf="element==true" mat-raised-button color="primary" (click)="addSalaries()">{{actionBtn}}</button>
+  <button *ngIf="element==false" mat-raised-button color="primary" (click)="updateSalaries()">{{actionBtn}}</button>
+</div>

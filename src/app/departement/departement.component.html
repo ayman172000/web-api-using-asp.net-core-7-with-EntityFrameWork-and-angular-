@@ -1,0 +1,50 @@
+<h1>Departement</h1>
+<div class="container">
+  <div class="card">
+    <div class="card-header">List departement</div>
+    <div class="card-body">
+      <div class="demo-button-container">
+        <button mat-raised-button (click)="addData()" class="demo-button">
+          Add data
+        </button>
+      </div>
+
+      <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 demo-table">
+
+        <ng-container matColumnDef="code">
+          <th mat-header-cell *matHeaderCellDef> Code departement </th>
+          <td mat-cell *matCellDef="let element"> {{element.codeDep}} </td>
+        </ng-container>
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef> Name departement</th>
+          <td mat-cell *matCellDef="let element"> {{element.nameDep}} </td>
+        </ng-container>
+
+        <!-- Weight Column -->
+        <ng-container matColumnDef="action">
+          <th mat-header-cell *matHeaderCellDef> Action </th>
+          <td mat-cell *matCellDef="let element">
+            <button (click)="Delete(element)" mat-icon-button color="warn">
+              <mat-icon>delete</mat-icon>
+            </button>
+            <button (click)="Edit(element)" mat-icon-button color="primary">
+              <mat-icon>edit</mat-icon>
+            </button>
+            <button mat-raised-button color="primary" class="ml-2" (click)="listeSalarieDep(element)">
+              Liste salaries
+            </button>
+          </td>
+        </ng-container>
+
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+
+
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,23 @@
+<h1 mat-dialog-title>{{actionBtn}} Departement</h1>
+<div mat-dialog-content>
+  <form [formGroup]="departementForm">
+
+    <mat-form-field appearance="outline">
+      <mat-label>Code departement</mat-label>
+      <input formControlName="code"  matInput placeholder="Code">
+      <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Name departement</mat-label>
+      <input formControlName="name"  matInput placeholder="Name">
+      <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+    </mat-form-field>
+
+  </form>
+</div>
+<div mat-dialog-actions [align]="'end'">
+  <button mat-raised-button color="warn" mat-dialog-close>Close</button>
+  <button *ngIf="element==true" mat-raised-button color="primary" (click)="addDepartement()">{{actionBtn}}</button>
+  <button *ngIf="element==false" mat-raised-button color="primary" (click)="updateDepartement()">{{actionBtn}}</button>
+</div>
