@@ -1,0 +1,6 @@
+﻿NOM,TYPE,GROUPE DE RESSOURCES,EMPLACEMENT,ABONNEMENT,
+"ApiDepSalaries","Service Gestion des API","cloud-shell-storage-westeurope","Central US","Azure for Students"
+"DepSalaries20221223184903","App Service","cloud-shell-storage-westeurope","Central US","Azure for Students"
+"DepSalaries20221223184903Plan","Plan App Service","cloud-shell-storage-westeurope","Central US","Azure for Students"
+"DepSalaries_dbAR (depsalariesdbserverar/DepSalaries_dbAR)","Base de données SQL","myresourcegroup","East US","Azure for Students"
+"depsalariesdbserverar","Serveur SQL","myresourcegroup","East US","Azure for Students"
